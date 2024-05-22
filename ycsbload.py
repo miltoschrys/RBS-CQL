@@ -1,11 +1,11 @@
 import subprocess
 import sys
 import time
-host='83.212.74.253'
-port='30009'
+host='xxx.xxx.xxx.xxx'
+port='xxxxx'
 username = 'k8ssandra-superuser'
-password ='ojvkr5G5rwnAVYCZnZJw'
-commandfile = "cleardb.cql"
+password ='xxxxxxxxxxxxxxxxxx'
+commandfile = "xxxxxxx.cql"
 
 #process1= subprocess.Popen("""ssh -t -t user@83.212.74.253 /home/user/cqlsh-5.1.20/bin/cqlsh {0} {1} -u {2} -p {3} -f /home/user/cqlsh-5.1.20/{4} """.format(host,port,username,password,commandfile)
 #                            ,shell=True)
@@ -18,7 +18,7 @@ records=sys.argv[1]
 target= str(200)
 threads=str(4)
 
-ycsbparamfile= '/home/user/ycsb-0.17.0/ycsbparams.dat'
+ycsbparamfile= '/xxxxxx/xxxxxx/xxxxx/xxxxxxxx.dat'
 process1=subprocess.Popen(['ssh','-t','-t','user@client','/home/user/ycsb-0.17.0/bin/ycsb','load','cassandra-cql',
                           '-P','/home/user/ycsb-0.17.0/workloads/workloada','-s','-p','insertcount=500000','-p','insertstart=4500000',
                           '-p','recordcount={0}'.format(records),'-threads',threads,'-target',target,'-P',ycsbparamfile],
