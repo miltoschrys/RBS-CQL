@@ -1,10 +1,10 @@
 import subprocess
-host='83.212.74.253'
-port='30007'
+host='xxx.xxx.xxx.xxx'
+port='xxxxx'
 username = 'k8ssandra-superuser'
-password ='ojvkr5G5rwnAVYCZnZJw'
-commandfile = "cleardb.cql"
-process1= subprocess.Popen("""ssh user@83.212.74.253 /home/user/cqlsh-5.1.20/bin/cqlsh {0} {1} -u {2} -p {3} -f /home/user/cqlsh-5.1.20/{4} """.format(host,port,username,password,commandfile)
+password ='xxxxxxxxxxxxxxxx'
+commandfile = "xxxxx.cql"
+process1= subprocess.Popen("""ssh user@xxx.xxx.xxx.xxx /home/user/cqlsh-5.1.20/bin/cqlsh {0} {1} -u {2} -p {3} -f /home/user/cqlsh-5.1.20/{4} """.format(host,port,username,password,commandfile)
                             ,shell=True)
 print(process1.args)
 process1.communicate()
@@ -12,8 +12,8 @@ process1.communicate()
 threads='10'
 target='100'
 records='10000'
-ycsbparamfile= '/home/user/ycsb-0.17.0/ycsbparams.dat'
-process=subprocess.Popen(['ssh','user@83.212.74.253','/home/user/ycsb-0.17.0/bin/ycsb','load','cassandra-cql',
+ycsbparamfile= '/xxx/xxxx/xxxxx/xxxxxx.dat'
+process=subprocess.Popen(['ssh','user@xxx.xxx.xxx.xxx','/home/user/ycsb-0.17.0/bin/ycsb','load','cassandra-cql',
                           '-P','/home/user/ycsb-0.17.0/workloads/workloada','-s',
                           '-p','recordcount={0}'.format(records),'-threads',threads,'-target',target,'-P',ycsbparamfile],
                           stderr=subprocess.PIPE,
@@ -32,7 +32,7 @@ while True:
         break
 #run ycsb
 operations='30000'
-process=subprocess.Popen(['ssh','user@83.212.74.253','/home/user/ycsb-0.17.0/bin/ycsb','run','cassandra-cql',
+process=subprocess.Popen(['ssh','user@xxx.xxx.xxx.xxx','/home/user/ycsb-0.17.0/bin/ycsb','run','cassandra-cql',
                           '-P','/home/user/ycsb-0.17.0/workloads/workloada','-s',
                           '-p','recordcount={0}'.format(records),'-p','operationcount={0}'.format(operations),'-threads',threads,'-target',target,'-P',ycsbparamfile],
                           stderr=subprocess.PIPE,
