@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cassandra-config
+data:
+  cassandra.yaml: |-
+    read_request_timeout_in_ms: 800
+    range_request_timeout_in_ms: 2000
+    write_request_timeout_in_ms: 800
+    request_timeout_in_ms: 800
